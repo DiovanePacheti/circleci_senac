@@ -1,0 +1,33 @@
+{
+  "name": "circleci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "dev": " nodemon src/server.js",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "transform": {
+      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
+    }
+  },
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.3",
+    "sucrase": "^3.14.0"
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.2",
+    "express": "^4.17.1"
+  }
+}
